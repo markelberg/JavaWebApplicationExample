@@ -1,5 +1,6 @@
 package ejemplos.servlet.curso;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,5 +30,8 @@ public class MyServlet extends HttpServlet {
 		out.println("<p1>Haciendo click en Enviar, aceptas que la información proporcionada se gestione en el siguiente servlet</p1>");
 		out.println("</form>");
 		out.println("</body></html>");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("formulario_servlet.jsp");
+		dispatcher.forward(request, response);
 	}
 }

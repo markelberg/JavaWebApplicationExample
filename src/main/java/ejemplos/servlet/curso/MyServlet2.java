@@ -1,5 +1,6 @@
 package ejemplos.servlet.curso;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,5 +24,8 @@ public class MyServlet2 extends HttpServlet {
 		out.println("<body>");
 		out.println("<h1>¡Bienvenida " + nombre + "!</h1>");
 		out.println("</body></html>");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("formulario_servlet2.jsp");
+		dispatcher.forward(request, response);
 	}
 }
