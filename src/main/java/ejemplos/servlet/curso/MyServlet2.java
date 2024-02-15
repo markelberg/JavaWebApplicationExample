@@ -15,17 +15,7 @@ public class MyServlet2 extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		String nombre = request.getParameter("nombre");
-
-		out.println("<html>");
-		out.println("<head><title>Ejemplo Formulario Servlet2</title></head>");
-		out.println("<body>");
-		out.println("<h1>¡Bienvenida " + nombre + "!</h1>");
-		out.println("</body></html>");
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("formulario_servlet2.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/formulario_servlet2.jsp");
 		dispatcher.forward(request, response);
 	}
 }
